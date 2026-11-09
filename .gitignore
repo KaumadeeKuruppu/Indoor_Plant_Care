@@ -1,0 +1,59 @@
+﻿# Dependencies
+node_modules/
+
+# Expo and generated builds
+.expo/
+/dist/
+/.dist/
+/web-build/
+expo-env.d.ts
+/android/
+/ios/
+*.apk
+*.aab
+*.ipa
+
+# Bundler and tool caches
+.metro-health-check*
+.cache/
+.eslintcache
+*.tsbuildinfo
+.kotlin/
+
+# Test reports and generated screenshots
+/coverage/
+/test-results/
+/playwright-report/
+/artifacts/
+
+# Local environment variables (keep safe templates)
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Signing credentials
+*.jks
+*.keystore
+*.p8
+*.p12
+*.key
+*.pem
+*.mobileprovision
+credentials.json
+
+# Logs
+*.log
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*.orig.*

@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "PlantCare",
+    "slug": "plantcare",
+    "scheme": "plantcare",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.verdant.plantcare"
+    },
+    "android": {
+      "package": "com.verdant.plantcare",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#071B13"
+      }
+    },
+    "web": {
+      "favicon": "./assets/icon.png",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#071B13",
+          "image": "./assets/icon.png",
+          "imageWidth": 150
+        }
+      ]
+    ]
+  }
+}
