@@ -1,0 +1,31 @@
+﻿{
+  "reviewed": "2026-11-05",
+  "notes": [
+    "Watering intervals are starting estimates, not fixed schedules.",
+    "Air-purifying describes findings in controlled experiments; houseplants do not replace ventilation or filtration in homes.",
+    "Pet-friendly means non-toxic to cats and dogs for the named species; eating any plant may still cause stomach upset.",
+    "Generated botanical and symptom images are illustrative and should not be used to identify a disease."
+  ],
+  "sources": [
+    {
+      "title": "UC IPM: Houseplant Problems",
+      "url": "https://ipm.ucanr.edu/home-and-landscape/houseplant-problems/"
+    },
+    {
+      "title": "University of Maryland: Diagnose Indoor Plant Problems",
+      "url": "https://extension.umd.edu/resource/diagnose-indoor-plant-problems"
+    },
+    {
+      "title": "University of Missouri: Caring for Houseplants",
+      "url": "https://extension.missouri.edu/publications/g6510"
+    },
+    {
+      "title": "ASPCA: Toxic and Non-Toxic Plants",
+      "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants"
+    },
+    {
+      "title": "NASA: Interior Landscape Plants (controlled chamber study)",
+      "url": "https://ntrs.nasa.gov/api/citations/19930073077/downloads/19930073077.pdf"
+    }
+  ]
+}

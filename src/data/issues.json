@@ -1,0 +1,666 @@
+[
+  {
+    "id": "overwatering",
+    "name": "Overwatering",
+    "severity": "moderate",
+    "category": "watering",
+    "symptoms": ["yellowing-leaves", "drooping", "soft-stems", "falling-leaves"],
+    "affectedPlants": [
+      "monstera",
+      "snake-plant",
+      "golden-pothos",
+      "spider-plant",
+      "peace-lily",
+      "zz-plant",
+      "chinese-evergreen",
+      "rubber-plant",
+      "boston-fern",
+      "parlor-palm",
+      "calathea",
+      "aloe-vera",
+      "philodendron",
+      "english-ivy",
+      "areca-palm"
+    ],
+    "why": "Constant saturation limits oxygen around roots, reducing their ability to take up water.",
+    "causes": ["Watering before soil has dried enough", "Poor drainage or a pot that is too large"],
+    "identification": [
+      "Soil stays wet between waterings",
+      "Yellow leaves feel soft rather than crisp"
+    ],
+    "recoverySteps": [
+      "Feel soil below the surface before adding more water.",
+      "Empty the saucer and check drainage holes.",
+      "Let the mix dry to the depth recommended for this plant.",
+      "If stems are soft or roots smell unpleasant, inspect for rot.",
+      "Use fresh airy mix if the current mix stays waterlogged; reduce watering frequency."
+    ],
+    "prevention": [
+      "Check soil rather than following a rigid calendar.",
+      "Use a draining pot and empty the outer cachepot."
+    ],
+    "recheck": "Check soil in 2–3 days; assess new growth over 2–3 weeks.",
+    "signals": {
+      "soil": "wet",
+      "watering": "frequent"
+    }
+  },
+  {
+    "id": "underwatering",
+    "name": "Underwatering",
+    "severity": "moderate",
+    "category": "watering",
+    "symptoms": ["yellowing-leaves", "drooping", "curling", "crispy-leaves", "brown-tips"],
+    "affectedPlants": [
+      "monstera",
+      "snake-plant",
+      "golden-pothos",
+      "spider-plant",
+      "peace-lily",
+      "zz-plant",
+      "chinese-evergreen",
+      "rubber-plant",
+      "boston-fern",
+      "parlor-palm",
+      "calathea",
+      "aloe-vera",
+      "philodendron",
+      "english-ivy",
+      "areca-palm"
+    ],
+    "why": "Roots cannot supply leaves when the potting mix becomes too dry for the species.",
+    "causes": ["Long gaps between watering", "Heat, small pots, or root-bound growth"],
+    "identification": [
+      "Pot feels unusually light",
+      "Soil is dry below the surface; leaves feel crisp"
+    ],
+    "recoverySteps": [
+      "Check soil moisture through the root zone.",
+      "Water slowly and thoroughly until water drains.",
+      "If water runs around a dry root ball, soak the pot briefly, then drain fully.",
+      "Recheck leaf firmness the next day.",
+      "Adjust watering to the plant and room conditions."
+    ],
+    "prevention": [
+      "Check moisture more often in warm weather.",
+      "Do not allow moisture-loving species to dry out completely."
+    ],
+    "recheck": "Check in 24 hours and again after 3 days.",
+    "signals": {
+      "soil": "dry",
+      "watering": "rare"
+    }
+  },
+  {
+    "id": "root-rot",
+    "name": "Root rot",
+    "severity": "high",
+    "category": "plant-health",
+    "symptoms": ["root-rot", "soft-stems", "yellowing-leaves", "drooping"],
+    "affectedPlants": [
+      "monstera",
+      "snake-plant",
+      "golden-pothos",
+      "spider-plant",
+      "peace-lily",
+      "zz-plant",
+      "chinese-evergreen",
+      "rubber-plant",
+      "boston-fern",
+      "parlor-palm",
+      "calathea",
+      "aloe-vera",
+      "philodendron",
+      "english-ivy",
+      "areca-palm"
+    ],
+    "why": "Persistently wet, low-oxygen conditions favor organisms that damage root tissue.",
+    "causes": ["Waterlogged soil", "Blocked drainage or contaminated potting mix"],
+    "identification": [
+      "Roots are brown or black and mushy rather than firm",
+      "Root covering slips away; soil may smell unpleasant"
+    ],
+    "recoverySteps": [
+      "Gently remove the plant from its pot.",
+      "Inspect roots and trim only rotten, mushy parts using clean tools.",
+      "Clean tools between cuts and discard contaminated mix.",
+      "Repot in a clean draining pot with fresh suitable mix.",
+      "Water according to remaining roots and species needs; avoid saturation.",
+      "If the entire crown is rotten, recovery may not be possible; consider a healthy cutting."
+    ],
+    "prevention": ["Use well-aerated mix.", "Avoid standing water and excessive pot sizes."],
+    "recheck": "Inspect moisture in 2 days; watch for fresh growth over several weeks.",
+    "signals": {
+      "soil": "wet",
+      "watering": "frequent"
+    }
+  },
+  {
+    "id": "yellowing-leaves",
+    "name": "Yellowing leaves: investigate the cause",
+    "severity": "low",
+    "category": "plant-health",
+    "symptoms": ["yellowing-leaves", "pale-leaves"],
+    "affectedPlants": [
+      "monstera",
+      "snake-plant",
+      "golden-pothos",
+      "spider-plant",
+      "peace-lily",
+      "zz-plant",
+      "chinese-evergreen",
+      "rubber-plant",
+      "boston-fern",
+      "parlor-palm",
+      "calathea",
+      "aloe-vera",
+      "philodendron",
+      "english-ivy",
+      "areca-palm"
+    ],
+    "why": "Yellowing is a sign, not a disease; leaf age, light, roots, and pests can all contribute.",
+    "causes": ["Normal leaf turnover", "Water, light, nutrition, or pest stress"],
+    "identification": [
+      "Record whether one old leaf or many new leaves are affected",
+      "Compare moisture and light with the plant profile"
+    ],
+    "recoverySteps": [
+      "Inspect both sides of leaves and check soil moisture.",
+      "Separate normal shedding of a single old leaf from widespread yellowing.",
+      "Use the other possible causes below to guide inspection.",
+      "Correct the underlying condition; avoid removing every yellow leaf at once."
+    ],
+    "prevention": [
+      "Track changes instead of making several care changes at once.",
+      "Check roots and lighting before adding fertilizer."
+    ],
+    "recheck": "Inspect in 7 days; seek more clues if yellowing spreads.",
+    "signals": {}
+  },
+  {
+    "id": "brown-leaf-tips",
+    "name": "Brown leaf tips: moisture or salt stress",
+    "severity": "low",
+    "category": "plant-health",
+    "symptoms": ["brown-tips", "crispy-leaves"],
+    "affectedPlants": [
+      "spider-plant",
+      "calathea",
+      "peace-lily",
+      "areca-palm",
+      "boston-fern",
+      "parlor-palm"
+    ],
+    "why": "Leaf tips may dry when water supply is uneven or salts accumulate in potting mix.",
+    "causes": ["Dry air or irregular watering", "Excess fertilizer or mineral-rich water"],
+    "identification": [
+      "Browning starts at tips or margins",
+      "White crust may be present on soil or the pot"
+    ],
+    "recoverySteps": [
+      "Check moisture and the room's humidity.",
+      "Pause fertilizer if salt buildup is visible.",
+      "If the pot drains freely, flush mix with low-mineral water and drain completely.",
+      "Trim only dead tips with clean scissors if desired."
+    ],
+    "prevention": [
+      "Use diluted fertilizer only during growth.",
+      "Keep moisture consistent for the species."
+    ],
+    "recheck": "Inspect new leaf tips after 2–3 weeks.",
+    "signals": {}
+  },
+  {
+    "id": "spider-mites",
+    "name": "Spider mites",
+    "severity": "moderate",
+    "category": "plant-health",
+    "symptoms": ["pale-leaves", "yellowing-leaves", "insects", "crispy-leaves"],
+    "affectedPlants": [
+      "calathea",
+      "english-ivy",
+      "parlor-palm",
+      "rubber-plant",
+      "areca-palm",
+      "monstera"
+    ],
+    "why": "These tiny mites feed on leaf cells, producing fine pale speckling and sometimes webbing.",
+    "causes": ["Introduction on another plant", "Warm, dry conditions favor rapid multiplication"],
+    "identification": [
+      "Look for fine webbing and pinprick stippling",
+      "Tap a leaf over white paper and inspect moving specks"
+    ],
+    "recoverySteps": [
+      "Isolate the plant.",
+      "Rinse leaf undersides gently, protecting the soil from saturation.",
+      "Wipe leaves and remove heavily damaged foliage.",
+      "If needed, use a product labeled for mites on indoor plants; follow its label and patch-test.",
+      "Inspect nearby plants and repeat monitoring."
+    ],
+    "prevention": [
+      "Inspect new plants before placing them nearby.",
+      "Keep leaves clean and avoid prolonged very dry air."
+    ],
+    "recheck": "Inspect every 3–4 days for several weeks.",
+    "signals": {
+      "insects": "yes"
+    }
+  },
+  {
+    "id": "mealybugs",
+    "name": "Mealybugs",
+    "severity": "moderate",
+    "category": "plant-health",
+    "symptoms": ["insects", "sticky-leaves", "yellowing-leaves", "stunted-growth"],
+    "affectedPlants": [
+      "monstera",
+      "golden-pothos",
+      "zz-plant",
+      "philodendron",
+      "chinese-evergreen",
+      "aloe-vera"
+    ],
+    "why": "Sap-feeding insects shelter in leaf joints and leave sticky honeydew.",
+    "causes": ["Pests introduced with new plants", "Hidden colonies in crevices"],
+    "identification": [
+      "Cottony white clusters at leaf joints",
+      "Sticky residue without a powdery coating across the leaf"
+    ],
+    "recoverySteps": [
+      "Isolate the plant and inspect stems and leaf joints.",
+      "Remove visible insects with a damp swab.",
+      "Rinse or wipe accessible foliage.",
+      "For persistent colonies, choose a labeled indoor-plant insecticidal soap, patch-test, and follow directions.",
+      "Check nearby plants and remove recurring colonies."
+    ],
+    "prevention": [
+      "Quarantine and inspect new arrivals.",
+      "Inspect leaf joints during routine cleaning."
+    ],
+    "recheck": "Check weekly for at least a month.",
+    "signals": {
+      "insects": "yes"
+    }
+  },
+  {
+    "id": "aphids",
+    "name": "Aphids",
+    "severity": "moderate",
+    "category": "plant-health",
+    "symptoms": ["insects", "sticky-leaves", "curling", "stunted-growth"],
+    "affectedPlants": ["english-ivy", "peace-lily", "philodendron", "golden-pothos", "parlor-palm"],
+    "why": "Small sap-feeding insects gather on tender new shoots and can distort emerging leaves.",
+    "causes": ["Infested plants brought indoors", "Soft new growth supports colonies"],
+    "identification": [
+      "Clusters of pear-shaped insects on growing tips",
+      "Sticky honeydew and distorted young leaves"
+    ],
+    "recoverySteps": [
+      "Isolate the plant.",
+      "Wash aphids off with a gentle stream of water.",
+      "Prune a severely infested tip if appropriate.",
+      "Use a labeled indoor-plant soap only if needed, following all label directions.",
+      "Inspect new shoots for returning insects."
+    ],
+    "prevention": ["Check new growth regularly.", "Avoid excessive nitrogen fertilizer."],
+    "recheck": "Reinspect in 3–5 days.",
+    "signals": {
+      "insects": "yes"
+    }
+  },
+  {
+    "id": "scale-insects",
+    "name": "Scale insects",
+    "severity": "moderate",
+    "category": "plant-health",
+    "symptoms": ["insects", "sticky-leaves", "yellowing-leaves", "stunted-growth"],
+    "affectedPlants": ["rubber-plant", "areca-palm", "parlor-palm", "english-ivy", "zz-plant"],
+    "why": "Scale insects attach to stems or leaves and feed beneath protective covers.",
+    "causes": ["Introduction on infested plants", "Insects overlooked on stems and leaf veins"],
+    "identification": [
+      "Fixed brown or tan bumps lift away from the leaf surface",
+      "Some species produce sticky honeydew"
+    ],
+    "recoverySteps": [
+      "Isolate the affected plant.",
+      "Gently remove accessible scales with a damp cloth.",
+      "Prune heavily infested growth when practical.",
+      "For persistent infestation, use a product labeled for scale on indoor plants, following its directions.",
+      "Inspect neighboring plants and repeat checks."
+    ],
+    "prevention": [
+      "Inspect stems as well as leaf surfaces.",
+      "Keep new plants separate during initial observation."
+    ],
+    "recheck": "Inspect weekly for 4–6 weeks.",
+    "signals": {
+      "insects": "yes"
+    }
+  },
+  {
+    "id": "fungal-leaf-spots",
+    "name": "Fungal leaf spots",
+    "severity": "moderate",
+    "category": "plant-health",
+    "symptoms": ["leaf-spots", "yellowing-leaves", "falling-leaves"],
+    "affectedPlants": [
+      "monstera",
+      "peace-lily",
+      "calathea",
+      "chinese-evergreen",
+      "rubber-plant",
+      "english-ivy"
+    ],
+    "why": "Fungi can infect damp foliage, although similar spots can also have non-fungal causes.",
+    "causes": [
+      "Leaves remaining wet for long periods",
+      "Poor air movement and contaminated debris"
+    ],
+    "identification": [
+      "Spots enlarge or develop halos over time",
+      "Pattern cannot be explained by a single burn or injury"
+    ],
+    "recoverySteps": [
+      "Separate the plant while you inspect it.",
+      "Remove badly affected leaves using clean tools.",
+      "Water soil directly and keep foliage dry.",
+      "Improve gentle air circulation without a cold draft.",
+      "If lesions continue spreading, seek a local horticultural diagnosis."
+    ],
+    "prevention": [
+      "Avoid crowding and persistent leaf wetness.",
+      "Remove fallen leaves from the pot."
+    ],
+    "recheck": "Photograph spots and compare in 5–7 days.",
+    "signals": {
+      "soil": "wet"
+    }
+  },
+  {
+    "id": "powdery-mildew",
+    "name": "Powdery mildew",
+    "severity": "moderate",
+    "category": "plant-health",
+    "symptoms": ["white-powder", "curling", "stunted-growth"],
+    "affectedPlants": ["english-ivy", "rubber-plant", "philodendron", "chinese-evergreen"],
+    "why": "A fungal growth forms pale powdery patches; mineral deposits and mealybugs can look similar.",
+    "causes": ["Limited air circulation", "Susceptible foliage in favorable humidity conditions"],
+    "identification": [
+      "Powdery patches spread across leaves",
+      "No cottony insects are found at leaf joints"
+    ],
+    "recoverySteps": [
+      "Isolate and check that the coating is not mineral residue.",
+      "Remove badly affected leaves with clean tools.",
+      "Improve spacing and gentle air movement.",
+      "Avoid improvised chemical mixtures; seek labeled plant-safe treatment advice if it spreads."
+    ],
+    "prevention": [
+      "Avoid crowding plants.",
+      "Inspect new plants and maintain steady growing conditions."
+    ],
+    "recheck": "Compare patches after 5–7 days.",
+    "signals": {}
+  },
+  {
+    "id": "nutrient-deficiency",
+    "name": "Possible nutrient deficiency",
+    "severity": "low",
+    "category": "plant-health",
+    "symptoms": ["pale-leaves", "yellowing-leaves", "stunted-growth"],
+    "affectedPlants": [
+      "monstera",
+      "snake-plant",
+      "golden-pothos",
+      "spider-plant",
+      "peace-lily",
+      "zz-plant",
+      "chinese-evergreen",
+      "rubber-plant",
+      "boston-fern",
+      "parlor-palm",
+      "calathea",
+      "aloe-vera",
+      "philodendron",
+      "english-ivy",
+      "areca-palm"
+    ],
+    "why": "A depleted mix or stressed roots can limit nutrients available for new growth.",
+    "causes": ["Long-term growth without replenishing nutrients", "Root stress or unsuitable pH"],
+    "identification": [
+      "Growth is slow during the active season",
+      "Paling continues despite appropriate moisture and light"
+    ],
+    "recoverySteps": [
+      "Rule out root rot, low light, and pests first.",
+      "Check when the plant was last repotted or fed.",
+      "During active growth, use a balanced houseplant fertilizer at the label's appropriate diluted rate.",
+      "Do not fertilize a severely stressed plant with damaged roots."
+    ],
+    "prevention": [
+      "Follow the plant profile's feeding guidance.",
+      "Refresh potting mix when needed rather than overfeeding."
+    ],
+    "recheck": "Assess new growth in 3–4 weeks.",
+    "signals": {
+      "onset": "weeks"
+    }
+  },
+  {
+    "id": "sunburn",
+    "name": "Sunburn / excess light",
+    "severity": "moderate",
+    "category": "plant-health",
+    "symptoms": ["leaf-spots", "crispy-leaves", "pale-leaves", "curling"],
+    "affectedPlants": [
+      "monstera",
+      "peace-lily",
+      "calathea",
+      "boston-fern",
+      "parlor-palm",
+      "golden-pothos",
+      "philodendron"
+    ],
+    "why": "Unacclimated leaves can scorch when exposed to strong direct sun.",
+    "causes": ["Sudden move to a sunny window", "Harsh afternoon sunlight"],
+    "identification": [
+      "Bleached or dry patches face the window",
+      "Damage follows a recent change of position"
+    ],
+    "recoverySteps": [
+      "Move into suitable filtered light.",
+      "Check moisture; do not automatically overwater.",
+      "Leave partly healthy leaves in place.",
+      "Acclimate slowly if the species can tolerate brighter exposure."
+    ],
+    "prevention": ["Use a sheer curtain for strong sun.", "Change light exposure gradually."],
+    "recheck": "Check in 3–5 days for new damage.",
+    "signals": {
+      "light": "direct",
+      "onset": "days"
+    }
+  },
+  {
+    "id": "low-humidity",
+    "name": "Low humidity",
+    "severity": "low",
+    "category": "plant-health",
+    "symptoms": ["brown-tips", "curling", "crispy-leaves"],
+    "affectedPlants": ["calathea", "boston-fern", "peace-lily", "areca-palm", "parlor-palm"],
+    "why": "Dry indoor air increases leaf water loss, especially in humidity-loving plants.",
+    "causes": ["Air conditioning or heating", "Humidity below the species' preference"],
+    "identification": [
+      "Tips brown despite appropriate soil moisture",
+      "New leaves may unfurl poorly"
+    ],
+    "recoverySteps": [
+      "Check humidity with a hygrometer if available.",
+      "Move away from heating and air-conditioning vents.",
+      "Use a clean humidifier to raise room humidity moderately.",
+      "Keep airflow and correct soil moisture; misting alone is short-lived."
+    ],
+    "prevention": [
+      "Group compatible plants with space for airflow.",
+      "Avoid placing sensitive plants beside vents."
+    ],
+    "recheck": "Assess emerging leaves over 2–3 weeks.",
+    "signals": {}
+  },
+  {
+    "id": "cold-damage",
+    "name": "Cold damage",
+    "severity": "moderate",
+    "category": "plant-health",
+    "symptoms": ["drooping", "leaf-spots", "falling-leaves", "soft-stems"],
+    "affectedPlants": [
+      "monstera",
+      "snake-plant",
+      "golden-pothos",
+      "spider-plant",
+      "peace-lily",
+      "zz-plant",
+      "chinese-evergreen",
+      "rubber-plant",
+      "boston-fern",
+      "parlor-palm",
+      "calathea",
+      "aloe-vera",
+      "philodendron",
+      "english-ivy",
+      "areca-palm"
+    ],
+    "why": "Cold temperatures damage tropical plant tissue and can slow root function.",
+    "causes": ["Cold drafts or contact with cold glass", "Exposure during transport"],
+    "identification": [
+      "Damage appears after a cold night or move",
+      "Leaves develop dark, water-soaked patches"
+    ],
+    "recoverySteps": [
+      "Move to a stable temperature appropriate to the species.",
+      "Keep away from cold glass and drafts.",
+      "Wait until damage is clear before pruning dead tissue.",
+      "Check soil before watering because cold-stressed roots use less water."
+    ],
+    "prevention": ["Protect plants during transport.", "Avoid sudden temperature swings."],
+    "recheck": "Inspect in 3–7 days.",
+    "signals": {
+      "onset": "days"
+    }
+  },
+  {
+    "id": "insufficient-light",
+    "name": "Insufficient light",
+    "severity": "low",
+    "category": "plant-health",
+    "symptoms": ["pale-leaves", "yellowing-leaves", "stunted-growth", "falling-leaves"],
+    "affectedPlants": [
+      "monstera",
+      "golden-pothos",
+      "rubber-plant",
+      "aloe-vera",
+      "areca-palm",
+      "philodendron"
+    ],
+    "why": "Too little usable light slows growth and causes plants to shed foliage they cannot support.",
+    "causes": ["Placement far from a window", "Seasonally reduced daylight"],
+    "identification": ["New stems stretch toward light", "New leaves are smaller and growth slows"],
+    "recoverySteps": [
+      "Move closer to a window with suitable indirect light.",
+      "Increase exposure gradually to prevent scorching.",
+      "Reduce watering frequency if growth remains slow.",
+      "Rotate periodically to encourage balanced growth."
+    ],
+    "prevention": [
+      "Choose a position matching the species.",
+      "Reassess daylight as seasons change."
+    ],
+    "recheck": "Assess new growth after 3–4 weeks.",
+    "signals": {
+      "light": "low",
+      "onset": "weeks"
+    }
+  },
+  {
+    "id": "natural-aging",
+    "name": "Natural aging of older leaves",
+    "severity": "low",
+    "category": "plant-health",
+    "symptoms": ["yellowing-leaves", "falling-leaves"],
+    "affectedPlants": [
+      "monstera",
+      "snake-plant",
+      "golden-pothos",
+      "spider-plant",
+      "peace-lily",
+      "zz-plant",
+      "chinese-evergreen",
+      "rubber-plant",
+      "boston-fern",
+      "parlor-palm",
+      "calathea",
+      "aloe-vera",
+      "philodendron",
+      "english-ivy",
+      "areca-palm"
+    ],
+    "why": "Plants gradually recycle nutrients from older leaves as new leaves develop.",
+    "causes": ["Normal leaf turnover"],
+    "identification": [
+      "Only one or a few oldest lower leaves change",
+      "New growth remains healthy; no spreading damage or pests"
+    ],
+    "recoverySteps": [
+      "Check roots, moisture, and pests before assuming normal aging.",
+      "Leave mostly green leaves attached.",
+      "Remove fully dead leaves with clean tools.",
+      "Continue normal care if growth remains healthy."
+    ],
+    "prevention": [
+      "Observe the overall plant, not a single leaf.",
+      "Avoid unnecessary fertilizer or extra water."
+    ],
+    "recheck": "Check in 1–2 weeks; widespread yellowing needs further inspection.",
+    "signals": {}
+  },
+  {
+    "id": "chewing-damage",
+    "name": "Chewing or mechanical damage",
+    "severity": "low",
+    "category": "plant-health",
+    "symptoms": ["holes", "leaf-spots"],
+    "affectedPlants": [
+      "monstera",
+      "snake-plant",
+      "golden-pothos",
+      "spider-plant",
+      "peace-lily",
+      "zz-plant",
+      "chinese-evergreen",
+      "rubber-plant",
+      "boston-fern",
+      "parlor-palm",
+      "calathea",
+      "aloe-vera",
+      "philodendron",
+      "english-ivy",
+      "areca-palm"
+    ],
+    "why": "Irregular holes can come from chewing pests, pets, or physical injury; some species naturally have splits.",
+    "causes": ["Chewing pests brought indoors", "Handling damage or curious pets"],
+    "identification": [
+      "New irregular holes differ from normal leaf shape",
+      "Look for pests, droppings, or a damaged emerging leaf"
+    ],
+    "recoverySteps": [
+      "Inspect both leaf surfaces and the pot at different times of day.",
+      "Separate the plant if an active pest is found.",
+      "Remove visible chewing pests safely.",
+      "Keep foliage clear of walkways and pets; damaged tissue will not regrow."
+    ],
+    "prevention": ["Inspect plants coming indoors.", "Protect unfurling leaves from handling."],
+    "recheck": "Check for fresh damage over the next 3–5 days.",
+    "signals": {
+      "insects": "yes"
+    }
+  }
+]

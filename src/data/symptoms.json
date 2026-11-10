@@ -1,0 +1,92 @@
+[
+  {
+    "id": "yellowing-leaves",
+    "name": "Yellowing leaves",
+    "description": "Leaves lose their green color. Note whether old or new leaves are affected.",
+    "image": "yellow-leaves"
+  },
+  {
+    "id": "brown-tips",
+    "name": "Brown leaf tips",
+    "description": "Tips or edges turn brown, often with a dry border.",
+    "image": "brown-tips"
+  },
+  {
+    "id": "drooping",
+    "name": "Drooping / wilting",
+    "description": "Leaves hang limply or stems lose their usual firmness.",
+    "image": "drooping"
+  },
+  {
+    "id": "falling-leaves",
+    "name": "Falling leaves",
+    "description": "Leaves drop more quickly than the plant normally sheds them.",
+    "image": "falling-leaves"
+  },
+  {
+    "id": "leaf-spots",
+    "name": "Brown or black spots",
+    "description": "Distinct dark patches appear on leaf surfaces.",
+    "image": "leaf-spots"
+  },
+  {
+    "id": "white-powder",
+    "name": "White powder",
+    "description": "A flour-like coating appears on leaf surfaces.",
+    "image": "white-powder"
+  },
+  {
+    "id": "sticky-leaves",
+    "name": "Sticky leaves",
+    "description": "A tacky film or droplets coat leaves and nearby surfaces.",
+    "image": "sticky-leaves"
+  },
+  {
+    "id": "insects",
+    "name": "Tiny insects",
+    "description": "Small moving insects, cottony clusters, or fixed bumps are visible.",
+    "image": "pests"
+  },
+  {
+    "id": "curling",
+    "name": "Curling leaves",
+    "description": "Leaf edges roll inward or young leaves emerge distorted.",
+    "image": "curling"
+  },
+  {
+    "id": "soft-stems",
+    "name": "Soft or mushy stems",
+    "description": "Stems soften, darken, or collapse, especially near the soil.",
+    "image": "soft-stems"
+  },
+  {
+    "id": "stunted-growth",
+    "name": "Stunted growth",
+    "description": "Little new growth appears during the active growing season.",
+    "image": "stunted-growth"
+  },
+  {
+    "id": "crispy-leaves",
+    "name": "Dry and crispy leaves",
+    "description": "Leaves feel brittle and papery rather than soft.",
+    "image": "underwatering"
+  },
+  {
+    "id": "root-rot",
+    "name": "Rotten-looking roots",
+    "description": "Roots appear dark and mushy, with tissue that slips off.",
+    "image": "root-rot"
+  },
+  {
+    "id": "pale-leaves",
+    "name": "Pale leaves",
+    "description": "Foliage looks unusually light green or washed out.",
+    "image": "pale-leaves"
+  },
+  {
+    "id": "holes",
+    "name": "Holes in leaves",
+    "description": "New irregular holes or chewed edges appear; ignore normal Monstera splits.",
+    "image": "holes"
+  }
+]

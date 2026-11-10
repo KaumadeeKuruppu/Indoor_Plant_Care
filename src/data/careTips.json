@@ -1,0 +1,26 @@
+[
+  {
+    "id": "moisture",
+    "title": "Listen to the soil, not the calendar.",
+    "body": "Check moisture below the surface before watering. Light, temperature, pot size, and season change how quickly soil dries.",
+    "icon": "water-outline"
+  },
+  {
+    "id": "light",
+    "title": "A little turn goes a long way.",
+    "body": "Rotate your plant a quarter turn each week so every side has a chance to reach the light.",
+    "icon": "sunny-outline"
+  },
+  {
+    "id": "inspect",
+    "title": "Make leaf checks a quiet ritual.",
+    "body": "Look under leaves and along stems once a week. Catching a pest early makes care much easier.",
+    "icon": "leaf-outline"
+  },
+  {
+    "id": "drain",
+    "title": "Give roots room to breathe.",
+    "body": "Use pots with drainage holes and empty saucers after watering. A layer of stones cannot replace drainage.",
+    "icon": "flower-outline"
+  }
+]
