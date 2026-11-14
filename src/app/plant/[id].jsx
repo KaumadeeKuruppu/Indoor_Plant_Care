@@ -13,7 +13,6 @@ import {
   Empty,
   Sheet,
 } from '../../components/ui';
-import { DiagnosisCard } from '../../components/DiagnosisCard';
 import { StorageNotice } from '../../components/StorageNotice';
 import { getPlant, getPlantIssues } from '../../services/plantService';
 import { useFavorites } from '../../hooks/useFavorites';
@@ -39,6 +38,7 @@ export default function PlantDetails() {
       </Screen>
     );
   const saved = ids.includes(plant.id);
+  const plantIssues = getPlantIssues(plant);
   const shareText =
     plant.name +
     ' (' +
@@ -172,12 +172,40 @@ export default function PlantDetails() {
       ))}
       <Section title="When your plant needs help" />
       <Text style={[s.body, { marginBottom: 18 }]}>
-        Common problems to watch for. Open a guide to see symptoms, inspection steps, and recovery
-        advice.
+        Common problems, from high to low concern. For causes and care steps, open Plant Doctor.
       </Text>
-      {getPlantIssues(plant).map((issue) => (
-        <DiagnosisCard key={issue.id} issue={issue} />
-      ))}
+      {[
+        { severity: 'high', title: 'High Concern', color: c.danger },
+        { severity: 'moderate', title: 'Moderate Concern', color: c.warning },
+        { severity: 'low', title: 'Low Concern', color: c.accent },
+      ].map((group) => {
+        const groupIssues = plantIssues.filter((issue) => issue.severity === group.severity);
+        if (!groupIssues.length) return null;
+        return (
+          <View key={group.severity} style={{ gap: 12, marginBottom: 24 }}>
+            <Text
+              accessibilityRole="header"
+              style={[s.body, { color: group.color, fontWeight: '700', fontSize: 16 }]}
+            >
+              {group.title}
+            </Text>
+            <Glass style={{ paddingHorizontal: 18 }}>
+              {groupIssues.map((issue, index) => (
+                <View
+                  key={issue.id}
+                  style={{
+                    paddingVertical: 14,
+                    borderTopWidth: index === 0 ? 0 : 1,
+                    borderTopColor: c.border,
+                  }}
+                >
+                  <Text style={[s.body, { color: c.text }]}>{issue.name}</Text>
+                </View>
+              ))}
+            </Glass>
+          </View>
+        );
+      })}
       <Button
         label="Check Plant Health"
         icon="medkit-outline"

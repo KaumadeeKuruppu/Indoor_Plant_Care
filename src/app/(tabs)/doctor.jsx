@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { View, Text, Image, Pressable } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { Screen, Heading, Eyebrow, Glass, Button, Sheet, Icon, Fade } from '../../components/ui';
-import { symptoms, getPlant, issues, getAffectedPlants } from '../../services/plantService';
-import { symptomImages, illustrations } from '../../constants/images';
+import { symptoms, getPlant, issues, getSymptomPlants } from '../../services/plantService';
+import { symptomImages, illustrations, plantImages } from '../../constants/images';
 import { fonts } from '../../constants/theme';
 export default function Doctor() {
   const { plantId } = useLocalSearchParams();
@@ -15,6 +15,7 @@ function DoctorFlow({ plantId }) {
   const plant = getPlant(plantId);
   const [selected, setSelected] = useState(null);
   const matches = selected ? issues.filter((issue) => issue.symptoms.includes(selected.id)) : [];
+  const symptomPlants = selected ? getSymptomPlants(selected.id) : [];
   return (
     <Screen>
       <Heading
@@ -116,6 +117,45 @@ function DoctorFlow({ plantId }) {
               style={{ width: '100%', height: 140, borderRadius: 16, backgroundColor: c.hero }}
             />
             <Text style={s.body}>{selected.description}</Text>
+            {!!symptomPlants.length && (
+              <View style={{ gap: 12 }}>
+                <Eyebrow>CLOSEST PLANT MATCHES</Eyebrow>
+                <Text style={s.small}>
+                  Up to three plants with the most matching issue associations in our library. This
+                  is not a likelihood estimate; other plants can show this symptom too.
+                </Text>
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12 }}>
+                  {symptomPlants.map((affected) => (
+                    <View
+                      key={affected.id}
+                      style={{
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        gap: 10,
+                        width: '100%',
+                        padding: 10,
+                        borderRadius: 14,
+                        backgroundColor: c.surface,
+                        borderWidth: 1,
+                        borderColor: c.border,
+                      }}
+                    >
+                      <Image
+                        source={plantImages[affected.image]}
+                        style={{ width: 48, height: 48, borderRadius: 10 }}
+                        resizeMode="cover"
+                      />
+                      <View style={{ flex: 1, gap: 3 }}>
+                        <Text style={[s.body, { color: c.text, fontWeight: '600' }]}>
+                          {affected.name}
+                        </Text>
+                        <Text style={s.small}>{affected.scientificName}</Text>
+                      </View>
+                    </View>
+                  ))}
+                </View>
+              </View>
+            )}
             <Text style={s.small}>
               These are possible causes. Check the signs below to find the care that fits your
               plant.
@@ -127,12 +167,6 @@ function DoctorFlow({ plantId }) {
                     {issue.name}
                   </Text>
                   <Text style={s.body}>{issue.why}</Text>
-                  <Eyebrow>PLANTS COMMONLY AFFECTED</Eyebrow>
-                  <Text style={s.body}>
-                    {getAffectedPlants(issue)
-                      .map((affected) => affected.name)
-                      .join(', ')}
-                  </Text>
                   {plant && issue.affectedPlants.includes(plant.id) && (
                     <Text style={[s.small, { color: c.accent }]}>
                       Also associated with {plant.name}
