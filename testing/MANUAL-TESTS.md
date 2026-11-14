@@ -6,8 +6,6 @@
 - Tester: Project owner (user)
 - Method: Manual feature testing
 - Result source: The project owner confirmed that all app features were manually tested and worked correctly. The results below record that confirmation; they were not independently observed by the assistant.
-- Device / OS: Not recorded
-- Tested app version / Git commit: Not recorded
 
 ## Feature results
 
