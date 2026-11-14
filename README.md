@@ -37,12 +37,18 @@ Follow the Expo terminal instructions to open the app on a compatible phone or e
 
 
 assets/          Images and app icon
+
 src/app/         Screens and navigation
+
 src/components/  Reusable UI components
+
 src/constants/   Colours, fonts, and image references
+
 src/data/        Plant information and care tips
+
 src/hooks/       Favourites and profile state
+
 src/services/    Plant data, storage, and diagnosis logic
+
 src/utils/       Plant filtering helpers
-```
 
