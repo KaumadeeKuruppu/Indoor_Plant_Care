@@ -1,11 +1,14 @@
-import React from 'react';
+import { useTheme } from '../hooks/useTheme';
+import React, { useMemo } from 'react';
 import { View, Text, Image, Pressable, StyleSheet } from 'react-native';
 import { router } from 'expo-router';
-import { colors as c, lightLabels } from '../constants/theme';
+import { lightLabels } from '../constants/theme';
 import { plantImages } from '../constants/images';
 import { useFavorites } from '../hooks/useFavorites';
-import { Icon, IconButton, s } from './ui';
+import { Icon, IconButton } from './ui';
 export function PlantCard({ plant, compact = false }) {
+  const { colors: c, styles: s } = useTheme();
+  const styles = useMemo(() => createStyles(c), [c]);
   const { ids, toggle, loading, error } = useFavorites(),
     saved = ids.includes(plant.id);
   return (
@@ -59,18 +62,19 @@ export function PlantCard({ plant, compact = false }) {
     </View>
   );
 }
-const styles = StyleSheet.create({
-  card: {
-    backgroundColor: '#112d20',
-    borderRadius: 22,
-    overflow: 'hidden',
-    borderWidth: 1,
-    borderColor: c.border,
-  },
-  image: { width: '100%', height: 200 },
-  info: { padding: 15, gap: 6 },
-  name: { fontSize: 15, fontWeight: '600', color: c.text },
-  scientific: { fontSize: 10, fontStyle: 'italic', color: c.muted },
-  meta: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 3 },
-  favorite: { position: 'absolute', top: 10, right: 10 },
-});
+const createStyles = (c) =>
+  StyleSheet.create({
+    card: {
+      backgroundColor: c.card,
+      borderRadius: 22,
+      overflow: 'hidden',
+      borderWidth: 1,
+      borderColor: c.border,
+    },
+    image: { width: '100%', height: 200 },
+    info: { padding: 15, gap: 6 },
+    name: { fontSize: 15, fontWeight: '600', color: c.text },
+    scientific: { fontSize: 10, fontStyle: 'italic', color: c.muted },
+    meta: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 3 },
+    favorite: { position: 'absolute', top: 10, right: 10 },
+  });

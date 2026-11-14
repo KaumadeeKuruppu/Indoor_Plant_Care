@@ -1,4 +1,4 @@
-﻿# PlantCare
+# PlantCare
 
 PlantCare is a mobile app built with React Native and Expo. It helps you learn about indoor plants and care for them.
 
@@ -10,6 +10,7 @@ PlantCare is a mobile app built with React Native and Expo. It helps you learn a
 - Find possible causes of plant problems with Plant Doctor.
 - Save your favourite plants.
 - Set your profile name.
+- Switch light/dark mode using the sun/moon icon at the top of Home. Your choice is saved on this device.
 
 ## Built with
 

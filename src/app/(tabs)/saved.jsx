@@ -1,12 +1,14 @@
+import { useTheme } from '../../hooks/useTheme';
 import React, { useState } from 'react';
 import { Text } from 'react-native';
 import { router } from 'expo-router';
-import { Screen, Heading, SearchBar, Empty, s } from '../../components/ui';
+import { Screen, Heading, SearchBar, Empty } from '../../components/ui';
 import { PlantGrid } from '../../components/PlantGrid';
 import { StorageNotice } from '../../components/StorageNotice';
 import { useFavorites } from '../../hooks/useFavorites';
 import { plants } from '../../services/plantService';
 export default function Saved() {
+  const { styles: s } = useTheme();
   const { ids, loading, error } = useFavorites(),
     [query, setQuery] = useState('');
   const saved = plants.filter((p) => ids.includes(p.id)),

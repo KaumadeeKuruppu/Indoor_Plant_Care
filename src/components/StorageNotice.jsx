@@ -1,8 +1,10 @@
+import { useTheme } from '../hooks/useTheme';
 import React from 'react';
 import { Text, View } from 'react-native';
 import { useFavorites } from '../hooks/useFavorites';
-import { Button, s } from './ui';
+import { Button } from './ui';
 export function StorageNotice() {
+  const { styles: s } = useTheme();
   const { error, retry } = useFavorites();
   return error ? (
     <View style={{ gap: 12, marginBottom: 20 }}>

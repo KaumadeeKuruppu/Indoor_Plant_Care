@@ -1,3 +1,4 @@
+import { useTheme } from '../../hooks/useTheme';
 import React, { useMemo, useState } from 'react';
 import { View, Text } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
@@ -10,13 +11,12 @@ import {
   Sheet,
   Empty,
   Eyebrow,
-  s,
 } from '../../components/ui';
 import { PlantGrid } from '../../components/PlantGrid';
 import { StorageNotice } from '../../components/StorageNotice';
 import { plants } from '../../services/plantService';
 import { emptyFilters, filterPlants } from '../../utils/plantFilters';
-import { filterOptions, colors as c } from '../../constants/theme';
+import { filterOptions } from '../../constants/theme';
 export default function Explore() {
   const { category } = useLocalSearchParams();
   return <ExploreContent key={category || 'all'} category={category} />;
@@ -30,6 +30,7 @@ function categoryFilters(category) {
   return f;
 }
 function ExploreContent({ category }) {
+  const { colors: c, styles: s } = useTheme();
   const [query, setQuery] = useState(''),
     [filters, setFilters] = useState(() => categoryFilters(category)),
     [draft, setDraft] = useState(emptyFilters),

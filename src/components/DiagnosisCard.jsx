@@ -1,11 +1,13 @@
+import { useTheme } from '../hooks/useTheme';
 import React, { useState } from 'react';
 import { View, Text, Pressable, Image, ScrollView } from 'react-native';
 import { router } from 'expo-router';
 import { getAffectedPlants, symptoms } from '../services/plantService';
 import { plantImages } from '../constants/images';
-import { Glass, Icon, Eyebrow, s } from './ui';
-import { colors as c } from '../constants/theme';
+import { Glass, Icon, Eyebrow } from './ui';
+
 export function DiagnosisCard({ issue, result, initialOpen = false }) {
+  const { colors: c, styles: s } = useTheme();
   const [open, setOpen] = useState(initialOpen),
     affected = getAffectedPlants(issue);
   const severity =
@@ -81,7 +83,7 @@ export function DiagnosisCard({ issue, result, initialOpen = false }) {
                   width: 26,
                   height: 26,
                   borderRadius: 13,
-                  backgroundColor: '#34543a',
+                  backgroundColor: c.step,
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
@@ -97,7 +99,7 @@ export function DiagnosisCard({ issue, result, initialOpen = false }) {
               • {x}
             </Text>
           ))}
-          <View style={{ padding: 15, backgroundColor: '#223e2b', borderRadius: 14, gap: 6 }}>
+          <View style={{ padding: 15, backgroundColor: c.note, borderRadius: 14, gap: 6 }}>
             <Text style={{ color: c.accent, fontWeight: '600', fontSize: 12 }}>
               When to check again
             </Text>

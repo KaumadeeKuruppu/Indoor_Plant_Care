@@ -1,15 +1,17 @@
+import { useTheme } from '../../hooks/useTheme';
 import React, { useState } from 'react';
 import { View, Text, Image, Pressable } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
-import { Screen, Heading, Eyebrow, Glass, Button, Sheet, Icon, Fade, s } from '../../components/ui';
+import { Screen, Heading, Eyebrow, Glass, Button, Sheet, Icon, Fade } from '../../components/ui';
 import { symptoms, getPlant, issues, getAffectedPlants } from '../../services/plantService';
 import { symptomImages, illustrations } from '../../constants/images';
-import { colors as c, fonts } from '../../constants/theme';
+import { fonts } from '../../constants/theme';
 export default function Doctor() {
   const { plantId } = useLocalSearchParams();
   return <DoctorFlow key={plantId || 'general'} plantId={plantId} />;
 }
 function DoctorFlow({ plantId }) {
+  const { colors: c, styles: s } = useTheme();
   const plant = getPlant(plantId);
   const [selected, setSelected] = useState(null);
   const matches = selected ? issues.filter((issue) => issue.symptoms.includes(selected.id)) : [];
@@ -64,14 +66,14 @@ function DoctorFlow({ plantId }) {
                   overflow: 'hidden',
                   borderWidth: active ? 2 : 1,
                   borderColor: active ? c.accent : c.border,
-                  backgroundColor: active ? '#24452e' : '#102c1e',
+                  backgroundColor: active ? c.raised : c.surface,
                   opacity: pressed ? 0.75 : 1,
                 })}
               >
                 <Image
                   source={symptomImages[sym.image]}
                   resizeMode="contain"
-                  style={{ width: '100%', height: 106, backgroundColor: '#0c2418' }}
+                  style={{ width: '100%', height: 106, backgroundColor: c.hero }}
                 />
                 <View
                   style={{
@@ -83,12 +85,12 @@ function DoctorFlow({ plantId }) {
                     borderRadius: 12,
                     alignItems: 'center',
                     justifyContent: 'center',
-                    backgroundColor: active ? c.accent : '#173724',
+                    backgroundColor: active ? c.accent : c.raised,
                     borderWidth: 1,
                     borderColor: c.border,
                   }}
                 >
-                  <Icon name="chevron-forward" size={16} color={active ? c.bg : c.accent} />
+                  <Icon name="chevron-forward" size={16} color={active ? c.onAccent : c.accent} />
                 </View>
                 <View style={{ padding: 12, gap: 6 }}>
                   <Text style={{ color: c.text, fontSize: 12, fontWeight: '600', lineHeight: 18 }}>
@@ -111,7 +113,7 @@ function DoctorFlow({ plantId }) {
             <Image
               source={symptomImages[selected.image]}
               resizeMode="contain"
-              style={{ width: '100%', height: 140, borderRadius: 16, backgroundColor: '#0c2418' }}
+              style={{ width: '100%', height: 140, borderRadius: 16, backgroundColor: c.hero }}
             />
             <Text style={s.body}>{selected.description}</Text>
             <Text style={s.small}>

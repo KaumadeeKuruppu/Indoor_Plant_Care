@@ -1,3 +1,4 @@
+import { useTheme } from '../../hooks/useTheme';
 import React, { useState } from 'react';
 import { View, Text, Image, Share, Platform } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -11,15 +12,15 @@ import {
   Button,
   Empty,
   Sheet,
-  s,
 } from '../../components/ui';
 import { DiagnosisCard } from '../../components/DiagnosisCard';
 import { StorageNotice } from '../../components/StorageNotice';
 import { getPlant, getPlantIssues } from '../../services/plantService';
 import { useFavorites } from '../../hooks/useFavorites';
-import { colors as c, lightLabels, fonts } from '../../constants/theme';
+import { lightLabels, fonts } from '../../constants/theme';
 import { plantImages } from '../../constants/images';
 export default function PlantDetails() {
+  const { colors: c, styles: s } = useTheme();
   const { id } = useLocalSearchParams(),
     plant = getPlant(id),
     { ids, toggle, loading, error } = useFavorites(),

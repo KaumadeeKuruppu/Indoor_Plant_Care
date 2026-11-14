@@ -1,11 +1,13 @@
+import { useTheme } from '../../hooks/useTheme';
 import React from 'react';
 import { Tabs } from 'expo-router';
 import { View, Platform, StyleSheet } from 'react-native';
 import { BlurView } from 'expo-blur';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Icon } from '../../components/ui';
-import { colors as c } from '../../constants/theme';
+
 export default function TabLayout() {
+  const { colors: c, mode } = useTheme();
   const insets = useSafeAreaInsets();
   return (
     <Tabs
@@ -41,11 +43,11 @@ export default function TabLayout() {
               overflow: 'hidden',
               borderWidth: 1,
               borderColor: c.border,
-              backgroundColor: 'rgba(17,43,30,.96)',
+              backgroundColor: c.tabBar,
             }}
           >
             {Platform.OS === 'ios' && (
-              <BlurView intensity={45} tint="dark" style={StyleSheet.absoluteFill} />
+              <BlurView intensity={45} tint={mode} style={StyleSheet.absoluteFill} />
             )}
           </View>
         ),

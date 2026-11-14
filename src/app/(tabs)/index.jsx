@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import { ThemeToggle } from '../../components/ThemeToggle';
+import { useTheme } from '../../hooks/useTheme';
+import React, { useMemo, useState } from 'react';
 import {
   View,
   Text,
@@ -21,18 +23,19 @@ import {
   Eyebrow,
   Sheet,
   Fade,
-  s,
 } from '../../components/ui';
 import { PlantCard } from '../../components/PlantCard';
 import { StorageNotice } from '../../components/StorageNotice';
 import { plants } from '../../services/plantService';
 import { illustrations } from '../../constants/images';
-import { colors as c, fonts } from '../../constants/theme';
+import { fonts } from '../../constants/theme';
 import { useFavorites } from '../../hooks/useFavorites';
 import { usePreferences } from '../../hooks/usePreferences';
 import tips from '../../data/careTips.json';
 import sources from '../../data/sources.json';
 export default function Home() {
+  const { colors: c, styles: s, mode, error: themeError } = useTheme();
+  const styles = useMemo(() => createStyles(c), [c]);
   const { ids } = useFavorites(),
     { name, saveName, error, ready } = usePreferences();
   const [panel, setPanel] = useState(null),
@@ -43,14 +46,29 @@ export default function Home() {
     greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
   return (
     <Screen>
-      <View style={[s.row, { marginBottom: 30 }]}>
-        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+      <View style={styles.header}>
+        <View style={styles.brand}>
           <Icon name="leaf" size={25} />
           <Text style={styles.logo}>
             PlantCare<Text style={{ color: c.accent }}>·</Text>
           </Text>
         </View>
-        <View style={{ flexDirection: 'row', gap: 9 }}>
+        <ThemeToggle />
+      </View>
+      {themeError && (
+        <Text accessibilityRole="alert" style={[s.small, { color: c.danger, marginBottom: 12 }]}>
+          {themeError}
+        </Text>
+      )}
+      <StorageNotice />
+      <View style={styles.welcomeRow}>
+        <View style={styles.welcomeText}>
+          <Text style={[s.body, { fontSize: 13 }]}>
+            {greeting}, {name}.
+          </Text>
+          <Text style={s.small}>Let’s keep your little jungle thriving.</Text>
+        </View>
+        <View style={styles.quickActions}>
           <IconButton
             name="bulb-outline"
             label="Open plant care tips"
@@ -67,13 +85,6 @@ export default function Home() {
           />
         </View>
       </View>
-      <StorageNotice />
-      <Text style={[s.body, { fontSize: 13 }]}>
-        {greeting}, {name}.
-      </Text>
-      <Text style={[s.small, { marginTop: 4, marginBottom: 25 }]}>
-        Let’s keep your little jungle thriving.
-      </Text>
       <Fade>
         <View style={[styles.hero, wide && styles.heroWide]}>
           <View style={[styles.heroArtwork, wide && styles.heroArtworkWide]}>
@@ -83,14 +94,14 @@ export default function Home() {
               resizeMode="contain"
               accessibilityLabel="A collection of five lush potted plants"
             />
-            <LinearGradient colors={['transparent', '#0c2418']} style={styles.heroImageFade} />
+            <LinearGradient colors={['transparent', c.hero]} style={styles.heroImageFade} />
           </View>
           <View style={[styles.heroContent, wide && styles.heroContentWide]}>
             <Eyebrow>GROW A LITTLE JOY</Eyebrow>
             <Text style={[styles.heroTitle, wide && { fontSize: 41, lineHeight: 45 }]}>
               A little green.{'\n'}A better everyday.
             </Text>
-            <Text style={[s.body, { maxWidth: 240, color: '#cad8c6' }]}>
+            <Text style={[s.body, { maxWidth: 240, color: c.heroText }]}>
               Your plants deserve the best care. Discover, nurture and grow your indoor jungle.
             </Text>
             <View style={{ alignSelf: 'flex-start', marginTop: 20 }}>
@@ -198,6 +209,7 @@ export default function Home() {
       >
         <Text style={s.body}>Make yourself at home. Your name stays on this device.</Text>
         <TextInput
+          keyboardAppearance={mode}
           accessibilityLabel="Your name"
           value={draft}
           onChangeText={setDraft}
@@ -247,72 +259,84 @@ export default function Home() {
     </Screen>
   );
 }
-const styles = StyleSheet.create({
-  logo: { fontSize: 19, letterSpacing: 4, color: c.text, fontWeight: '700' },
-  hero: {
-    paddingTop: 48,
-    borderRadius: 27,
-    overflow: 'hidden',
-    borderWidth: 1,
-    borderColor: c.border,
-    backgroundColor: '#0c2418',
-  },
-  heroWide: { minHeight: 435 },
-  heroArtwork: { height: 220, marginHorizontal: 16 },
-  heroArtworkWide: {
-    position: 'absolute',
-    width: '46%',
-    top: 48,
-    bottom: 24,
-    right: 8,
-    height: 'auto',
-    marginHorizontal: 0,
-  },
-  heroImage: { width: '100%', height: '100%' },
-  heroImageFade: { position: 'absolute', bottom: 0, left: 0, right: 0, height: 24 },
-  heroContent: { paddingTop: 12, paddingBottom: 29, paddingHorizontal: 24, gap: 13 },
-  heroContentWide: { width: '54%', paddingTop: 30 },
-  heroTitle: {
-    fontFamily: fonts.serif,
-    fontSize: 32,
-    lineHeight: 36,
-    color: c.text,
-    letterSpacing: -1.3,
-  },
-  heroTag: {
-    position: 'absolute',
-    top: 22,
-    left: 22,
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 7,
-  },
-  dot: { width: 5, height: 5, borderRadius: 3, backgroundColor: c.accent },
-  stats: { flexDirection: 'row', gap: 10, marginTop: 16 },
-  stat: {
-    flex: 1,
-    paddingVertical: 18,
-    alignItems: 'center',
-    gap: 7,
-    backgroundColor: 'rgba(26,53,36,.6)',
-    borderRadius: 18,
-    borderWidth: 1,
-    borderColor: c.border,
-  },
-  statValue: { fontFamily: fonts.serif, fontSize: 26, color: c.text },
-  category: {
-    width: '48%',
-    flexGrow: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: 16,
-    minHeight: 76,
-    gap: 9,
-    backgroundColor: '#112c1e',
-    borderRadius: 19,
-    borderWidth: 1,
-    borderColor: c.border,
-  },
-  footer: { color: c.accent2, fontSize: 9, letterSpacing: 2.3 },
-});
+const createStyles = (c) =>
+  StyleSheet.create({
+    header: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: 16,
+      marginBottom: 20,
+    },
+    brand: { flexDirection: 'row', alignItems: 'center', gap: 8, flexShrink: 1 },
+    welcomeRow: { flexDirection: 'row', alignItems: 'center', gap: 12, marginBottom: 25 },
+    welcomeText: { flex: 1, minWidth: 0, gap: 4 },
+    quickActions: { flexDirection: 'row', alignItems: 'center', gap: 8, flexShrink: 0 },
+    logo: { fontSize: 19, letterSpacing: 2, color: c.text, fontWeight: '700', flexShrink: 1 },
+    hero: {
+      paddingTop: 48,
+      borderRadius: 27,
+      overflow: 'hidden',
+      borderWidth: 1,
+      borderColor: c.border,
+      backgroundColor: c.hero,
+    },
+    heroWide: { minHeight: 435 },
+    heroArtwork: { height: 220, marginHorizontal: 16 },
+    heroArtworkWide: {
+      position: 'absolute',
+      width: '46%',
+      top: 48,
+      bottom: 24,
+      right: 8,
+      height: 'auto',
+      marginHorizontal: 0,
+    },
+    heroImage: { width: '100%', height: '100%' },
+    heroImageFade: { position: 'absolute', bottom: 0, left: 0, right: 0, height: 24 },
+    heroContent: { paddingTop: 12, paddingBottom: 29, paddingHorizontal: 24, gap: 13 },
+    heroContentWide: { width: '54%', paddingTop: 30 },
+    heroTitle: {
+      fontFamily: fonts.serif,
+      fontSize: 32,
+      lineHeight: 36,
+      color: c.text,
+      letterSpacing: -1.3,
+    },
+    heroTag: {
+      position: 'absolute',
+      top: 22,
+      left: 22,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 7,
+    },
+    dot: { width: 5, height: 5, borderRadius: 3, backgroundColor: c.accent },
+    stats: { flexDirection: 'row', gap: 10, marginTop: 16 },
+    stat: {
+      flex: 1,
+      paddingVertical: 18,
+      alignItems: 'center',
+      gap: 7,
+      backgroundColor: c.stat,
+      borderRadius: 18,
+      borderWidth: 1,
+      borderColor: c.border,
+    },
+    statValue: { fontFamily: fonts.serif, fontSize: 26, color: c.text },
+    category: {
+      width: '48%',
+      flexGrow: 1,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      padding: 16,
+      minHeight: 76,
+      gap: 9,
+      backgroundColor: c.surface,
+      borderRadius: 19,
+      borderWidth: 1,
+      borderColor: c.border,
+    },
+    footer: { color: c.accent2, fontSize: 9, letterSpacing: 2.3 },
+  });

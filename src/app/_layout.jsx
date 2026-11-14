@@ -3,12 +3,13 @@ import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { FavoritesProvider } from '../hooks/useFavorites';
-import { colors } from '../constants/theme';
-export default function RootLayout() {
+import { ThemeProvider, useTheme } from '../hooks/useTheme';
+function ThemedLayout() {
+  const { colors, mode } = useTheme();
   return (
     <SafeAreaProvider>
       <FavoritesProvider>
-        <StatusBar style="light" />
+        <StatusBar style={mode === 'dark' ? 'light' : 'dark'} />
         <Stack
           screenOptions={{
             headerShown: false,
@@ -21,5 +22,13 @@ export default function RootLayout() {
         </Stack>
       </FavoritesProvider>
     </SafeAreaProvider>
+  );
+}
+
+export default function RootLayout() {
+  return (
+    <ThemeProvider>
+      <ThemedLayout />
+    </ThemeProvider>
   );
 }
